@@ -1,0 +1,33 @@
+<!--css37.html-->
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>animation</title>
+<style>
+    @keyframes imagerotation{
+        0% {transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+
+        /* 다음과 같이 할 수도 있다 이 경우, 회전하는 모양이 약간씩 다르다. 
+        0%{transform: rotate(0deg);}
+        25%{transform: rotate(90deg);}
+        50%{transform: rotate(180deg);}
+        75%{transform: rotate(270deg);}
+        100%{transform: rotate(360deg);}
+        */ 
+    }
+    #tran{
+        animation-name: imagerotation;
+        animation-duration: 1s;
+        animation-iteration-count: 3;
+    }
+</style>
+</head>
+<body>
+    <h1>어지러워요</h1>
+    <hr>
+    <img id="tran" imagerotation src="image/spongebob.png">
+</body>
+</html>
+    

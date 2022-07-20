@@ -1,0 +1,15 @@
+1. 스윙이 경량 컴포넌트
+2. 다양하고 모양이 예쁨
+3. 4 Button 스윙 컴포넌트는 앞에 J가 붙음
+4. 1 JFrame
+5. 4 컴포넌트들은 컨테이너 없이도 출력된다.
+6. 2, 3, 4, 7
+7. MyFrame
+8. MyFrame2
+9. 	Container c;
+	(1)c.setLayout(new BorderLayout(3,4));
+	   setV
+	(2)c.setLayout(new FlowLayout(5,6));
+	(3)c.setLayout(new GridLayout(5,2,7,8));
+	(4)c.setLayout(null);
+10. JFrame3

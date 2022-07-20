@@ -1,0 +1,32 @@
+1. 	3
+2. 	4
+3. JButton btn = new JButton("Hello");
+btn.addActionListener(new MyActionListener(){
+	public void actionPerformed(ActionEvent e){
+		System.out.println("Click");
+	}
+});
+4. JButton btn = new JButton("Hello");
+btn.addKeyListener(new MyKeyListener(){
+	public void keyReleased(KeyEvent e){
+		System.out.println("Key Released");
+	}
+});
+5.	(1)ActionAdapter > ActionListener
+	(2)implements > extends
+	(3)ActionEvent > KeyEvent
+6. 	1
+7.	1
+8.	3
+9.	<Alt>, <Tab>, <Delete>, <Shift>, <Help>
+10.	(1)'a'
+	(2)KeyEvent.VK_ALT
+11.	(1)keyPressed() > keyTyped() > keyReleased() 
+	(2)keyPressed() > keyReleased()
+12.	(1)1
+	(2)11
+	(3)1 11
+13.	component.repaint();는 component의 위치나 크기, 색 등에 변화가 생겼으니 다시 그리도록 자바 플랫폼에 요청하는 코드이다. 
+	component.revalidate();는 component가 사실상 컨테이너인 경우로, 
+	컨테이너의 자식 컴포넌트들을 다시 배 치하도록 지시하는 코드이다. 
+	컨테이너 내부의 자식 컴포넌트가 삭제되거나 새로 추가된 경우 등으로 컨테이너 내부에 변화가 일어난 경우 호출하면 된다. 

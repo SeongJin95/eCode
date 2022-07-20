@@ -1,0 +1,32 @@
+<!--ani-keyframes.html-->
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Transform</title>
+</head>
+<style>
+    div{
+        width: 100px;   /* 너비 */
+        height: 100px;   /* 높이 */
+        background-color: blue;    /* 배경색 */
+        animation-name: change-bg;
+        animation-duration: 3s;
+    }
+    @keyframes change-bg {
+        from{
+            background-color: blue;
+            border: 1px solid black;
+        }      
+        to{
+            background-color: #a5d6ff;
+            border: 1px solid blue;
+            border-radius: 50%;
+        }  
+    }
+</style>
+<body>
+    <div></div>
+</body>
+</html>
+    

@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>훈련 만족도 조사 설문지</title>
+<style>
+    
+    div{
+        width: 700px;
+    }
+    table{
+        text-align:center;
+        margin-bottom: 15px;
+    }
+    form label.reg{
+        align-content: center;
+        font-size: 14px;
+        width:110px;
+        float: left;
+        text-align: left; 
+        margin-right: 10px;
+    }
+    form ul li{
+        list-style: none;
+        margin: 15px 0;
+        font-size: 14px;
+    }
+    form fieldset{
+        margin-bottom: 25px;
+    }
+    footer{
+        text-align: center;
+    }
+</style>
+<link rel="stylesheet" href="smartPhone.css">
+</head>
+<body>
+<header>
+    <h1>훈련 만족도 조사 설문지</h1>
+    <article>
+        <p>
+            훈련생들에게 더 나은 훈련을 제공하기 위한 설문입니다.
+        </p>
+    </article>
+</header>
+<form>
+    <div>
+        <fieldset>
+            <p><label class="reg" >수강과목</label>
+                <ul>
+                    <li>
+                        <select>
+                            <option value="1">Java</option>
+                            <option value="2">Python</option>
+                            <option value="3">JavaScript</option>
+                            <option value="4">C++</option>
+                        </select>
+                    </li>
+                </ul>
+            </p>
+            <p><label class="reg">성별</label>
+                <label><input type="radio" name="gender" value="male">남</label>
+                <label><input type="radio" name="gender" value="female">여</label>
+            </p>
+            <p><label class="reg">관심 분야</label>
+                <select>
+                    <option value="1">프론트엔드</option>
+                    <option value="2">백엔드</option>
+                </select>
+            </p>
+            <p><label class="reg">훈련에 참여 계기</label>
+                <p>
+                <label><input type="radio" name="job">취업</label>
+                <label><input type="radio" name="job">취미</label>
+                <label><input type="radio" name="job">창업</label>
+                <label><input type="radio" name="job">기타<input type="text" name="job"></label>               
+                </p>
+            </p>
+            
+            <table border="1" align="left">
+                <tr>
+                    <td></td><td>매우그렇다</td><td>그렇다</td><td>보통이다</td><td>아니다</td><td>매우아니다</td>
+                </tr>
+                <tr>
+                    <th>훈련이 도움이 되었습니까?</th>
+                    <td><input type="radio" name="q1"></td>
+                    <td><input type="radio" name="q1"></td>
+                    <td><input type="radio" name="q1"></td>
+                    <td><input type="radio" name="q1"></td>
+                    <td><input type="radio" name="q1"></td>
+                </tr>
+                <tr>
+                    <th>훈련 장소는 적절한 환경입니까? </th>
+                    <td><input type="radio" name="q2"></td>
+                    <td><input type="radio" name="q2"></td>
+                    <td><input type="radio" name="q2"></td>
+                    <td><input type="radio" name="q2"></td>
+                    <td><input type="radio" name="q2"></td>
+                </tr>
+                <tr>
+                    <th>이곳에서 다시 수강할 생각이 있습니까?</th>
+                    <td><input type="radio" name="q3"></td>
+                    <td><input type="radio" name="q3"></td>
+                    <td><input type="radio" name="q3"></td>
+                    <td><input type="radio" name="q3"></td>
+                    <td><input type="radio" name="q3"></td>
+                </tr>        
+            </table>
+            <p><textarea cols="50" rows="10" placeholder="개선할 점이있다면 남겨주세요"></textarea></p>
+            <p><input type="submit"></p> 
+        </fieldset>     
+    </div>
+</form>
+<hr>
+<footer>
+    <p>Copyright 2022</p>
+</footer>
+</body>
+</html>

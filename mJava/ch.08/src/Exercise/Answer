@@ -1,0 +1,26 @@
+1.	2 스트림은 다른 스트림과 연결될 수 없다
+2.	(1)FileInputStream
+	(2)FileInputStream, FileOutputStream
+	(3)FileReader
+	(4)FileWriter
+3.	4 FileInputStream
+4.	FileInputStream fin = null;	
+	try {
+			fin = new FileInputStream("song.mp3");
+	}catch(FileNotFoundException e) {
+			System.out.println("파일을 찾을 수 없습니다.");
+	}
+5.	1 File
+6.	1 파일 읽고 쓰기
+7.	(1)true
+	(2)c:\\windows
+	(3)c:\\windows\\system.ini
+	(4)system.ini
+	(5)"C:\\Windows"
+8.	3 바이트 스트림 입출력 시 문자 집합을 고려하여 입출력 해야한다.
+9.	c:\\temp\\test.txt, c=fin.read())!=-1, fin.close(), FileNotFoundException e
+10.	new BufferedOutputStream(System.out, 50)
+	"c:\\temp\\test2.txt"
+	(c=fin.read())!=-1
+	out.write(c);
+	

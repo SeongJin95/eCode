@@ -1,0 +1,359 @@
+HTML 문서 선언
+<!doctype html>
+
+인코딩
+<meta charset="UTF-8">
+
+문서 서두
+<head></head>
+
+문서 본문
+<body></body>
+
+제목 태그 h태그 제목 bold(굵음)체
+<h1></h1>   200%
+<h2></h2>   150%
+<h3></h3>   120%
+<h4></h4>   100%
+<h5></h5>   80%
+<h6></h6>   70%
+
+줄 바꿈 태그 
+<br>
+
+입력한 대로 출력하는 태그 pre
+<pre>123
+    456
+    789
+</pre><br>
+
+굵게 출력
+<b>555</b>
+<br>
+중요 긴급 출력
+<strong>555</strong>
+<br>
+
+취소선 출력
+<del>555</del>
+<br>
+
+강조 출력
+<em>555</em>
+<br>
+기울임 출력
+<i>555</i>
+<br>
+
+새로 추가된 내용 출력(밑줄)
+<ins>555</ins>
+<br>
+
+강조출력(형광펜)
+<mark>555</mark>
+<br>
+
+작게 출력
+<small>555</small>
+<br>
+
+아래첨자 텍스트
+<sub>555</sub>
+<br>
+
+위첨자 텍스트
+<sup>555</sup>
+<br>
+
+특수문자
+
+공백
+    &nbsp;
+    <br>
+
+<  
+    &lt;
+    <br>
+
+>
+    &gt;
+    <br>
+
+&
+    &amp;
+    <br>
+
+""
+    &quot;
+    <br>
+
+copy
+    &copy;
+    <br>
+
+regmark
+    &reg;
+    <br>
+
+공간 분할 태그
+
+단락(문단) 줄바꿈
+<p>555</p>
+<p>555</p>
+<br>
+
+블록 단락 정렬, br 기능 없음 행의 끝까지 영역확보
+<div>555</div>
+<br>
+
+인라인 요소간 줄바꿈 없음 글자크기만큼 영역 확보
+<span>555</span>
+<br>
+
+선긋기
+<hr>
+
+이미지
+<img src="" width="" height="" alt="">  /* 경로 너비 높이 null */
+
+
+요소 그룹화
+<figure></figure>
+
+figure 요소의 제목 표현
+<figcapation></figcapation>
+
+목록 태그
+
+비순차적 목록 ul 세부 리스트 li
+기본값 circle 
+css의 list-style-type에서 circle, disc, square, none으로 변경 가능 html에서 지원 안함
+<ul>
+    <li>1111</li>
+    <li>2222</li>
+</ul>
+
+순차적 목록ol 세부 리스트 li
+start="적용할 시작번호"
+type="1 | A | a | I | i"
+reversed는 내림차순으로 출력합니다.
+<ol start="50">
+    <li> ㅁ</li>
+    <li>ㄴ</li>
+    <li> ㅇ</li>
+</ol>
+
+정의 목록 dl
+dt 용어정의
+dd 용어 설명
+<dl>
+    <dt>123</dt>
+    <dd>456</dd>
+</dl>
+
+하이퍼링크 a href="" /a
+<a href="" target="">텍스트나 이미지</a>
+href 이동할 페이지 링크url
+target _blank | _top | _self | _parent
+        새창    현재창  동프레임    상위프레임
+
+테이블 태그 table
+표 제작에 사용 이전에는 레이아웃에도 사용했지만 현재는div태그 시멘틱 사용
+스프레드 시트 차트 스케쥴 달력
+table 테이블 표
+tr 행구분
+th 표내부제목
+td 표 열 구분
+caption 표상하단에 제목(생략가능)
+thead 행그룹 제목
+tbody 행내용
+tfoot 행그룹꼬리
+<table border="1">
+    <caption>...</caption>
+    <tr> 
+        <th>1</th>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr> 
+        <th>1</th>
+        <td>1</td>
+        <td>1</td>
+        <td>&nbsp</td>
+    </tr>
+</table>
+
+프레임 태그 iframe
+<iframe src=" " name=" " width=" " height=" " sandbox=" " srcdoc=" " frameborder="0"></iframe>
+
+sandbox 제한
+srcdoc 코드 직접 입력 가능 src 무시
+
+form 태그
+
+action="URL"    서버 url 지정
+method="get/post"   데이터 전송 방법 지정
+enctype=""
+target="윈도우명" 데이터 처리결과 표시할 윈도우
+name="" formd을 식별하기 위해 이름 지정
+
+form 자식 태그<form><input type="file"></form>
+text password checkbox radio submit reset button image file hidden
+
+textarea 
+    cols rows 열 행
+    name 요소이름
+    readonly 읽기전용
+    disabled 클릭 수정 불가능
+    <form><textarea cols="5" rows="5" ></textarea></form>
+
+select 콤보박스
+optgroup select 콤보박스안 라벨 그룹화
+    <label for="타이틀"></label> 그룹타이틀
+option
+    name="입력변수명"
+    size="보일항목개수"
+    multiple 메뉴 다중선택
+    value="데이터" <option></option>선택
+    selected 기본값 선택 데이터
+<form><select><optgroup<option></option></select></form>
+
+input 태그 속성
+type="입력타입"
+name="변수 명"
+value="기본입력값"
+size="입력양식길이"
+maxlength="입력문자수"
+src="URL" 이미지 버튼 주소
+checked 체크박스 라디오버튼 기본값
+readonly 읽기 전용
+accept audio video image에서 파일 확장자를 표시
+alt 이미지 대신 텍스트(type=image 에서만 사용)
+
+method 정송방법
+get     URL에 맵핑
+post    맵핑 안함
+
+label 태그 for 속성
+label 요소간 연결관계 설정
+for 연결하려는 id 이름을 설정
+
+<fieldset></fieldset> 폼요소 그룹화
+<legend></legend> 그룹화 요소의 제목 또는 설명
+
+audio
+    src=""  오디오 파일 경로
+    controls="controls" 오디오 컨트롤 표시여부
+    audioplay="autoplay" 자동재생
+    loop 사운드 반복 재생
+    type="" 오디오 파일의 MIME형식 지정
+    종류 mp3, wave, ogg
+
+vidio
+    src=""  파일 경로
+    controls="controls" 컨트롤 표시여부
+    width="", height="" 너비 높이
+    poster=""   영상대신 표시 이미지
+    preload=""  auto 자동, metadata 데이터만 다운 , none 시작전까지 다운 x
+    종류 mp4, webm, avi
+
+HTML5 향상된 form input 태그
+date
+<input type="date">
+month
+week
+time
+datetime
+email
+URL
+tel
+number
+range
+color
+search
+<input type="search">
+
+input 추가 속성\
+autocomplete 자동완성
+autofocus 자동으로 입력 포커스를 표시
+pattern 입력가능 정규표현식 패턴
+required 필수 항목
+placeholder 입력할 내용을 흐린 색의 Hint로 보여줍니다.
+readonly 읽기 전용
+form form이 복수인 경우 input 요소가 속한 form의 id
+formaction 입력 데이터를 처리할 파일의 url 지정 submit imag.와 함께 사용
+formenctype method=post인 경우 encode 지정
+formmethod  action=URL로 form-data를 전송할 때 사용할 메서드 정의
+formnovalidate  input의 유효성 검사 안함
+formtarget  서버로 전송후 응답받은 데이터를 표시할 곳의 이름 지정
+height/width 높이와 너비 지정
+list inpuit 요소가 사용되기 위해 미리 만든 datalist 요소
+mix/max input값의 최대 최솟값
+multiple input에 복수의 값을 입력가능
+step 숫자의 단계 지정 - 3이면 0, 3, 6, 9...
+
+정규 표현식
+[a-zA-Z]{n}n개 만큼 영문 a-z, A-Z를 입력합니다.
+[0-[a-zA-Z]{n}9]{n} n개 만큼 0~9숫자를 입력합니다.
+[a-zA-Z]{min, max}: 영문자와 숫자를 min ~ max 만큼 글자 수를 입력합니다.
+[0-9]+: 숫자를 1개 이상 입력합니다.
+
+신규 태그
+a   download 속성 href 속성에 지정한 파일을 다운로드할 수 있도록 설정합니다.
+    ping 속성: 링크를 클릭했을 때 정보를 자동으로 송신할 수 있도록 설정합니다.
+<a href="image/01.jpg" download="true">aa</a>
+
+bdi 텍스트의 출력 방향을 설정합니다
+command 사용자가 호출할 수 있는 명령어를 나타냅니다
+details 추가적인 정보 표시
+datalist input의 list 속성과 함께 콤보박스를 만드는 태그
+dialog 대화상자or창
+mark 텍스트 강조 형광펜
+meter 측정치 태그
+menu 명령어 정의 or 단축 메뉴 목록화
+output 결과 태그
+progress    다운로드 진행상황 태그
+&lt;ruby&gt;<rt></rt> 아시아권 언어에서 발음 주석 표시 태그
+<rp><rb><rtc></rtc></rb></rp>
+<summary></summary> <details></details> 하위 요소
+time 날짜와 시간 태그
+wbr 줄바꿈 지점 표시
+
+시맨틱 태그
+header 제목 요소 or 로고/아이콘, 저자 정보 표시
+nav 문서의 메뉴 모음 정리
+section 콘텐츠의 주체 그룹 h와 사용
+ariticle 독립적인 콘텐츠
+aside 보충정보
+footer 꼬릿말 종단
+<hgroup></hgroup> 제목 부제목 연결
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

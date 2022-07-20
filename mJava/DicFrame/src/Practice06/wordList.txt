@@ -1,0 +1,7 @@
+apple 사과
+banana 바나나
+cat 고양이
+dream 꿈
+egg 달걀
+frog 개구리
+grape 포도

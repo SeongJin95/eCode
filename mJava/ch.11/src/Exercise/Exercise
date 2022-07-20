@@ -1,0 +1,11 @@
+1.	3
+2.	1
+3.	ImageIcon, ImageIcon, setIcon	
+4.	setVisibie(false), setFont(new Font("Godic", Font.PLAIN , 20)), setEnabled(false)
+5.	4	
+6.	3
+7.	setIcon(new ImageIcon("plain.jpg")), setRolloverIcon(new ImageIcon("over.jpg"))
+8.	itemStateChanged, getStateChange(), ItemEvent.SELCETED
+9.	BorderLayout CENTER
+10.	ButtonGroup 클래스는 라디오버튼들(JRadioButton 객체)을 하나의 그룹으로 만 드는 역할이다. 
+	그룹(ButtonGroup)에 속한 라디오버튼들 중에서 하나만 선택 된다.

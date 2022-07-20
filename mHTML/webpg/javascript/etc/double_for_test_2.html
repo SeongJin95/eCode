@@ -1,0 +1,26 @@
+<!--double_for_test_2.html-->
+<!--5행 5열 표를 만들고, 데이터가 1부터 25까지 출력-->
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>제어문 종합 문제</title>
+    <script>
+        var num = 1;
+        var t ="<table border = 1>";
+        
+        for(var i=1;i<6;i++){
+            t += "<tr>";
+            for(var k=1;k<6;k++){
+                t += "<th>" + num + "</th>";
+                num++;
+            }
+            t += "</tr>";
+        }
+        t += "</table>";
+
+        document.write(t);            
+    </script>
+</head>
+<body>
+</body>
+</html>

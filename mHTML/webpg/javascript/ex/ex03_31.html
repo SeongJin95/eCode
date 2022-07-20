@@ -1,0 +1,23 @@
+<!--ex03_31.html-->
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Window 객체를 이용하여 창 이동하기</title>
+    <script>
+        window.onload = function(){
+            var win = window.open('../js/js01.html','','width=300,height=200');
+            win.moveTo(100, 100);
+
+            window.setInterval(function(){
+                win.moveBy(20, 20);
+            },1000);
+
+            window.setTimeout(function(){
+                win.close();
+            },5000);
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

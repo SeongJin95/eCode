@@ -1,0 +1,14 @@
+git 사용법
+git init
+git add .
+git commit -m "messege"
+git remote path
+git pull
+git push -u origin master
+
+git 오류
+
+Everything up-to-date 
+git status 후 add된 파일 확인
+git add * 입력 후 git commit -m "messege"
+git push

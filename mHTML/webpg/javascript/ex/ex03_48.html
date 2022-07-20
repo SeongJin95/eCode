@@ -1,0 +1,25 @@
+<!--ex03_48.html-->
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title> JSON stringfy와 parse</title>
+    <script>
+        user={
+            name:'admin',
+            email:'namgarambooks@naver.com',
+            phone:'032-056-3536'
+        };
+
+        alert(user);
+
+        userStr = JSON.stringify(user);
+        alert(userStr);
+
+        JSON.parse(userStr, function(key, value){
+            alert(key+" " +value);
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

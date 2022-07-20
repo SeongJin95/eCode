@@ -1,0 +1,34 @@
+<!--prior_c.html-->
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>논리 연산자</title>
+</head>
+<body>
+    <script>
+        var a = 10;
+        var b = 20;
+        var m = 30;
+        var n = 40;
+        
+        var result;
+        result = a>b || b>=m || m>n;    // false false false
+        document.write(result, "<br />");   // false
+        result = a>b || b>=m || m<=n;   // false false true
+        document.write(result, "<br />");   //etrue
+        result = a<=b && b>=m && m<=n;  // true false true
+        document.write(result, "<br />");   // false
+
+        x+=3;
+        y*=3;
+        z%=2;
+
+        document.write("x += 3; 실행 후, x=" + x + "<br>");
+        document.write("y *= 3; 실행 후, y=" + y + "<br>");
+        document.write("z %= 2; 실행 후, z=" + z + "<br>");
+
+        document.write("x/10 = " + div + "<br>");
+        document.write("x%2 = " + mod + "<br>");
+    </script>
+</body>
+</html>

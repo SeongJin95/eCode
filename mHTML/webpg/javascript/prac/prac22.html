@@ -1,0 +1,78 @@
+<!--prac22.html-->
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>캔버스에 파이 차트 만들기</title>
+    <script>
+        var colors = ["blue", "green", "yellow", "magenta", "red"];
+        var grades = ["A", "B", "C", "D", "F"];
+        var canvas;
+        var context;
+        var inputObjs;
+
+        function init(){
+            canvas = document.getElementById("myCanvas");
+            context = canvas.getContext("2d");
+            inputObjs = document.getElementsByClassName("num");
+        }
+        function drawChart(){
+            var total = 0;
+            for(var i=0;i<inputObjs.length;i++){
+                var n = parseInt(inputObjs[i].value);
+                if(isNan(n) || n<=0)
+                    inputObjs[i].value = 0;
+                else
+                    total += parseInt(inputObjs[i].value);
+            }
+        }
+        if(total==0)
+            return;
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        var x = canvas.width/2;
+        var y = canvas.height/2;
+        var small = (x<y)?x:y;
+        var radius = small - 20;
+        var startAngle = 0;
+        var endAngle = 0;
+        for(var i=0;i<inputObjs.length;i++){
+            var n = parseInt(inputObjs[i].value);
+            if(n == 0)
+                continue;
+            var deg = 360*n/total;
+            var rad = deg*Math.PI/180
+            endAngle = startAngle + rad;
+
+            context.beginPath();
+            context.moveTo(startX, startY);
+            context.arc(x, y, radius, startAngle, endAngle);
+            context.closePath();
+
+            context.strokeStyle = colors[i];
+            context.fillStyle = colors[i];
+            context.fill();
+            context.stroke();
+            startAngle = endAngle;
+        }
+
+        context.font = "normal 15px gothic";
+        context.fillStyle = "blue";
+        for(var i=0;i<inputObjs.length;i++){
+            var n = parseInt(inputObjs[i].value);
+            var percentage = Math.floor(n*100/total);
+            context.fillText(grades[i] + " 학점" + percentage + "% : " + colors[i], 10, 30 + i*16);
+        }
+    </script>
+</head>
+<body onload="init()">
+    <h3>학점 별로 학생 수를 입력하면 파이 차트로 비율 그리기</h3>
+    <hr>
+    A <input type="number" id="a" class="num" value="0"> 명
+    B <input type="number" id="b" class="num" value="0"> 명
+    C <input type="number" id="c" class="num" value="0"> 명 <br>
+    D <input type="number" id="d" class="num" value="0"> 명
+    F <input type="number" id="f" class="num" value="0"> 명
+    <input type="button" value="차트그리기" onclick="drawChart()"><br>
+    <canvas id="myCanvas" style="background-color: aliceblue" width="600" height="400"></canvas><br>    
+</body>
+</html>

@@ -1,0 +1,56 @@
+1. 윈도우 PC의 명령창에서 내 PC의 IP를 확인하는 명령어
+
+: ipconfig
+
+​
+
+2. 잘 알려진 포트(well known port) 에 대해 잘못 설명한 것은?
+
+: 4번. well know port list의 포트 사용은 피해야한다.
+
+​
+
+3. 소켓 통신에 대해 잘못 설명한 것
+
+: 4번. 서버 소켓은 클라이언트의 연결 요청을 기다리는 목적으로만 사용하고, 데이터의 송수신엔 Socket만 사용된다.
+
+​
+
+4. 통신 프로그램이 상대 통신 프로그램에 접속할 때 필요한 것
+
+: 2번. IP주소와 포트 번호
+
+​
+
+5. 다음 코드에 대한 설명으로 틀린 것
+
+    Socket socket = new Socket("192.168.0.115", 5050);
+
+: 3번. 클라이언트 소켓의 포트 번호가 5050이 아니라 서버소켓의 포트번호이다.
+
+​
+
+6. 다음 통신 서버 코드의 일부분을 채워라.
+
+ServerSocket ss = new ServerSocket(5550);
+Socket s = ss.accept();
+BufferedWriter out = newBufferedWriter(new OutputStreamWriter(s.getOutputStream()));
+out.write("안녕");
+out.flush();
+s.close();
+ss.close();
+​
+
+7. serverSocket에 대한 설명으로 틀린 것
+
+: 3번. 데이터를 송수신이 아니라 클라이언트의 연결 요청을 기다리는 용도로 사용한다.
+
+​
+
+8. 다음 통신 클라이언트 코드의 일부분을 채워라.
+
+Socket s = new Socket("203.1.1.1", 6000);
+BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
+in.readLine();
+s.close();
+

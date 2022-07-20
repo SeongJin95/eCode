@@ -1,0 +1,26 @@
+<!--js15.html-->
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>switch 문으로 커피 주문</title>
+    <script>
+        var price;
+        var coffee = prompt("무슨 커피 드릴까요?", "");
+        switch(coffee){
+            case "espsresso" :
+            case "에스프레소" : price = 2000;
+                break;
+            case "카푸치노" : price = 3000;
+                break;
+            case "카페라떼" : price = 3500;
+                break;
+            default:
+                document.write(coffee + "는 없습니다.");                
+        }
+        if(price != 0) 
+            document.write(coffee + "는 " + price  + "원입니다.");
+    </script>
+</head>
+<body>    
+</body>
+</html>

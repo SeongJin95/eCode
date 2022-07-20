@@ -1,0 +1,164 @@
+csstag
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS tag</title>
+    <link rel="stylesheet" type="text/css" href="style.css"> <!-- 외부 스타일 시트 -->
+</head>
+<body>
+    <style> /* type="text/css" 생략가능 내부 스타일 시트 */ 
+        @import url("style.css"); /* 여러개 불러오기 가능 link가 더 빠름 */ 
+        /* 색상 표현 방법 색상 이름, rgb값 , hex값 */
+        /*  '*'모든 태그에 적용  */
+        /*  #id명 .class명 id 유일한 요소 class 복수 요소 */
+        /*  속성 선택자
+            :first-line     태그의 첫 번째 라인 선택
+            :first-letter   태그의 첫 번째 문자 선택
+            :first-child    태그의 첫 번째 자식 요소 선택
+            :nth-child(e) e: odd/even/n 번째 요소
+            :before         선택한 태그 앞에 지정한 콘텐츠 삽입
+            :after          선택한 태그 뒤에 지정한 콘텐츠 삽입
+            :link           하이퍼링크 태그에 방문하지 않았을 경우
+            :visited        하이퍼링크 태그에 방문했을 경우
+            :hover          마우스 커서가 태그에 올라와 있는 동안
+            :active         태그가 활성화 되었을 경우
+            :focus          태그에 포커스가 머물러 있는 경우
+            선택자 우선 순위
+            인라인 > 아이디 > 클래스 > 태그
+            문자 스타일 속성
+            font-family     글꼴 설정
+            font-size       문자 크기 설정
+            font-style      문자의 기울기 설정 normal, italic, oblique, initial, inherit
+            font-weight     문자의 굵기 설정 normal, bold, bolder, lighter, initial, inherit    
+            font-varient    작은 대문자를 표시 normal, small-caps, initial, initial
+            line-height     줄 간격 조절
+            font            font 속성을 한 번에 기술
+            
+            절대크기 단위 
+            in=2.54cm, cm, mm, pt=1/72인치, 
+            large 18px=1.125em, small 13px=0.812em, 
+            x-large 24px=1.5em, xx-large 32px=2em
+
+            상대 크기 단위
+            em 기준 문자 높이
+            % 기준 글꼴 크기 백분율
+            larger 앞에 입력한 문자보다 크게
+            ex 기준 문자의 소문자 높이
+            px 픽셀
+            smaller 앞에 입력한 문자보다 작게
+
+            문단 스타일 속성
+            text-decoration 밑줄 또는 취소선
+                none, underline, overline, line-through, inherit
+            text-align 정렬
+                left, right, center, justify
+            text-indent 들여쓰기 내어쓰기
+            text-transform 대소문자 변경
+                none, capitalize, uppercase, lowercase, inherit
+            letter-spacing 자간 조절
+            word-spacing 단어 간격 조절
+            verical-align 수직 정렬 조절
+                baseline, top, middle, bottom 등
+            white-space 줄바꿈 설정
+                normal, nowrap, pre, pre-line, pre-wrap, inherit
+
+            테두리 스타일 속성
+            border-width 선 굵기
+                px, em등 단위
+            border-style 선 형태
+                none, solid, dotted, dashed, double, groove 등
+            border-color 선 색상 이름, 코드
+
+            리스트 스타일 속성
+            list-style-type 리스트 앞 불릿의 타입 설정
+                none, disc, circle, square, decimal, lower-alpha, upper-alpha, lower-roman, upper-roman
+            list-style-image 리스트 불릿을 이미지로 사용
+            list-style-position 리스트 불릿의 위치 설정
+                outside, inside, inherit
+            list-style 리스트 속성들을 한번에 사용
+
+            배경 속성
+            background-color 배경색
+            background-image 배경 이미지
+                url('경로')
+            background-repeat 배경 이미지 반복
+                repeat, repeat-x, repeat-y, no-repeat, inherit
+            background-position 이미지 위치 설정
+                px, %, left, right, top, bottom, center, inherit
+            background-attachment 이미지 동작 설정
+                scroll, local, fixed, inherit
+            
+            테이블 속성
+            border-collapse 셀 간격
+                separate, collapse, inherit
+            border-spacing 공백 조절 separate 상태만 가능
+            empty-cells 빈셀을 보여 줄지 설정 separate 상태만 가능
+                hide, show, inherit
+            table-layout 셀의 너비 고정 가변 설정
+                auto, fixed, inherit
+            vertical-align 수직 정렬
+                top, middle, bottom
+            caption-side 캡션의 위치 설정
+                top, bottom, initial, inherit
+            
+            여백 속성
+            margin 여백 스타일 설정
+            margin-top 위 여백
+            margin-right 우 여백
+            margin-bottom 아래 여백
+            margin-left 좌 여백
+
+            패딩 속성 (패딩: 내용과 테두리 사이)
+            padding 모든 패딩 설정
+            padding-top, right, bottom, left 각 패딩 설정
+
+            테두리 속성 (내용 패딩 테두리 여백)
+            border 테두리 설정
+            border-style 테두리 모양 설정
+            border-width 테두리 너비 설정
+            border-color 테두리 색 설정
+            border-top, bottom, right, left 각 테두리 설정
+
+            그림자
+            text-shadow: h-shadow v-shadow blur-shadow spread-distance color; 
+                            수평    수직    흐림반경    확산거리        컬러
+            box-shadow: h-shadow v-shadow blur-shadow spread-distance color;
+            
+            그래디언트 종류
+            linear-gradient 선형 그래드언트 효과 두 개 이상 색 지정
+                background: linear-gradient(direction | angle, color1, color2...)  
+                                            ex) to top , 180deg
+            radial-gradient 원 또는 타원 중심부터 바깥쪽으로 바뀌는 그래디언트
+                background: radial-gradient(모양/크기 및 위치, 출발색, 중간색, 종료색)
+            
+            레이아웃 속성
+            overflow 요소 안에서 콘텐츠 내용이 오버될 때 표현 방법
+                visible, hidden, scroll, auto, inherit
+            display 요소의 종류를 블록 또는 인라인으로 바꾸는 속성
+                inline, block, none, inline-block(inline을 block처럼 나열)
+                <div>, <h>, <p>, <ul>, <ol>, <form>
+            visibility
+                visible, hidden, collapse(테이블전용)
+                <span>, <a>, <img>
+            z-index 요소의 배치 순서 설정
+                    auto, number, initial
+            position 레이아웃 배치 요소위치 설정
+                    static, relative, absolute, fixed
+            float 요소를 좌우에 배치
+                    none, left, right, initial, inherit
+            clear 요소의 옆을 취소
+                    none, left, right, both
+             
+            뷰포트 속성
+            width, height 너비 높이
+            initial-scale 배율로 초기화면 크기 설정
+            minimum-scale, maximum-scale 뷰포트 배율값
+            user-scalable 사용자가 확대 축소 설정
+                
+                    
+
+        */
+        span :nth-child(){color: red;}
+    </style>
+</body>
+</html>

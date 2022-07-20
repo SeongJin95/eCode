@@ -1,0 +1,211 @@
+<!--layout-css.html-->
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5 레이아웃</title>
+<style>
+    body{
+        font-family: "맑은 고딕", "고딕", "굴림";
+    }
+    #wrapper{
+        width: 800px;
+        margin: 0 auto;
+    }
+    header{
+        width: 100%;
+        height: 150px;
+        background-image: url(logo_header_bbq.png);
+        background-repeat: no-repeat;
+        background-position: right center;
+    }
+    header nav{
+        float: left;
+        width: 70%;
+        margin-top: 50px;
+    }
+    nav ul{
+        list-style-type: none;
+    }
+    nav ul li{
+        display: inline;
+        float: left;
+        font-weight: bold;
+        margin: 15px;
+    }
+    nav ul li a{
+        color: white;
+        text-decoration: none;
+    }
+    footer p{
+        padding: 20px;
+    }
+    h1{font-size: 2em;}
+    h2{font-size: 1.5em;}
+    h3{font-size: 1.0.em;}
+    p{
+        line-height: 20px;
+        font-size: 12px;
+    }
+    section{
+        float: left;
+        width: 580px;
+        padding: 5px;
+    }
+    section article{
+        float: left;
+        width: 250px;
+        height: 220px;
+        margin: 5px;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+    aside{
+        float: right;
+        width: 200px;
+        height: auto;
+        margin-top:80px;
+        border: 1px solid darkgreen;
+        text-align: center;
+    }
+    aside img{
+        width: 150px;
+    }
+    footer{
+        clear: both;
+        width: 800px;
+        margin-bottom: 0;
+        background-color: #333;
+        color: white;
+        text-align:center;
+    }
+    .at1, .at2, .at3, .at4{
+        transition: 2s;
+        -webkit-transition: 2s;
+        -moz-transition: 2s;
+        -o-transition: 2s;
+        -ms-transition:2s;
+    }
+    .at1:hover{
+        background-color: #cf9;
+        border: 1px solid green;
+    }
+    .at2:hover{
+        background-color: #a2d0ff;
+        border: 1px solid blue;
+    }
+    .at3:hover{
+        background-color: #ebcbfe;
+        border: 1px solid purple;
+    }
+    .at4:hover{
+        background-color: #fc3;
+        border: 1px solid red;
+    }
+    img{
+        width: 220px;
+    }
+    #explain{ 
+        position: absolute; opacity: 0; 
+    } 
+    .at1 p{
+        visibility: hidden;
+    }
+    .at2 p{
+        visibility: hidden;
+    }
+    .at3 p{
+        visibility: hidden;
+    }
+    .at4 p{
+        visibility: hidden;
+    }
+    .at1 p :hover{
+        visibility: visible;
+    }    
+    .at2:hover #explain{ 
+        opacity: 1; 
+    }
+    /* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+        </header>
+        <section>
+            <h2>BBQ 치킨 메뉴</h2>
+            <article class="at1">
+                <img src="./BBQ_go.png" alt="">
+                <p>BBQ만의 황금빛 파우더가 선사하는 잊을 수 없는 바삭바삭함과 육즙 가득 부드러운 속살이 환상적인 맛</p>
+            </article>
+            <article class="at2">                
+                <img src="./BBQ_zl.jpg" alt="">
+                    <p>영국 BBC가 선정한 죽기 전 꼭 먹어봐야 할 50가지 음식 중 하나</p> 
+            </article>
+            <article class="at3">
+                <img src="./BBQ_bp.png" alt="">
+                <p>핫하고 알싸한 맛 핫싸! 블랙페퍼</p>       
+            </article>
+            <article class="at4">
+                <img src="./kk1.jpg" alt="">
+                <p>BBQ 특제깐풍소스에 향긋한 대파와 고추를 곁들인 치맥의 절대 지존!</p>
+            </article>
+        </section>
+        <aside>
+            <img src="hh.png" alt="">
+            <img src="cp.png" alt="">
+            <img src="hc.png" alt="">
+        </aside>
+        <footer>
+            <p>Copyright 2022</p>
+        </footer>
+    </div>
+</body>
+</html>
+    
