@@ -15,53 +15,55 @@
             context = canvas.getContext("2d");
             inputObjs = document.getElementsByClassName("num");
         }
+
         function drawChart(){
             var total = 0;
             for(var i=0;i<inputObjs.length;i++){
                 var n = parseInt(inputObjs[i].value);
-                if(isNan(n) || n<=0)
+                if(isNaN(n) || n<=0)
                     inputObjs[i].value = 0;
                 else
                     total += parseInt(inputObjs[i].value);
+            }      
+            if(total==0)
+                return;
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            var x = canvas.width/2;
+            var y = canvas.height/2;
+            var small = (x<y)?x:y;
+            var radius = small - 20;
+            var startAngle = 0;
+            var endAngle = 0;
+            for(var i=0;i<inputObjs.length;i++){
+                    var n = parseInt(inputObjs[i].value);
+                    if(n == 0)
+                        continue;
+                    var deg = 360*n/total;
+                    var rad = deg*Math.PI/180
+                    endAngle = startAngle + rad;
+                    
+                    context.beginPath();
+                    context.moveTo(x, y);
+                    context.arc(x, y, radius, startAngle, endAngle);
+                    context.closePath();
+                    
+                    context.strokeStyle = colors[i];
+                    context.fillStyle = colors[i];
+                    context.fill();
+                    context.stroke();
+                    startAngle = endAngle;
+            }
+
+            context.font = "normal 15px gothic";
+            context.fillStyle = "blue";
+            for(var i=0;i<inputObjs.length;i++){
+                var n = parseInt(inputObjs[i].value);
+                var percentage = Math.floor(n*100/total);
+                context.fillText(grades[i] + " 학점" + percentage + "% : " + colors[i], 10, 30 + i*16);
             }
         }
-        if(total==0)
-            return;
-        context.clearRect(0, 0, canvas.width, canvas.height);
-
-        var x = canvas.width/2;
-        var y = canvas.height/2;
-        var small = (x<y)?x:y;
-        var radius = small - 20;
-        var startAngle = 0;
-        var endAngle = 0;
-        for(var i=0;i<inputObjs.length;i++){
-            var n = parseInt(inputObjs[i].value);
-            if(n == 0)
-                continue;
-            var deg = 360*n/total;
-            var rad = deg*Math.PI/180
-            endAngle = startAngle + rad;
-
-            context.beginPath();
-            context.moveTo(startX, startY);
-            context.arc(x, y, radius, startAngle, endAngle);
-            context.closePath();
-
-            context.strokeStyle = colors[i];
-            context.fillStyle = colors[i];
-            context.fill();
-            context.stroke();
-            startAngle = endAngle;
-        }
-
-        context.font = "normal 15px gothic";
-        context.fillStyle = "blue";
-        for(var i=0;i<inputObjs.length;i++){
-            var n = parseInt(inputObjs[i].value);
-            var percentage = Math.floor(n*100/total);
-            context.fillText(grades[i] + " 학점" + percentage + "% : " + colors[i], 10, 30 + i*16);
-        }
+        
     </script>
 </head>
 <body onload="init()">
@@ -74,5 +76,6 @@
     F <input type="number" id="f" class="num" value="0"> 명
     <input type="button" value="차트그리기" onclick="drawChart()"><br>
     <canvas id="myCanvas" style="background-color: aliceblue" width="600" height="400"></canvas><br>    
+    <div id = mid></div>  
 </body>
 </html>

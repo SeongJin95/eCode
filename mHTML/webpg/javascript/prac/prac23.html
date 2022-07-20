@@ -9,12 +9,12 @@
                 alert("지원하지 않습니다. ");
                 return;
             }
-            var endWord = document.getElementById("eng").value;
+            var engWord = document.getElementById("eng").value;
             engWord = engWord.trim();
             var korWord = document.getElementById("kor").value;
             korWord = korWord.trim();
 
-            if(localStorage.getItem(engWord)!=null){
+            if(localStorage.getItem(engWord)!= null){
                 var ret = confirm(engWord + "가 이미 있습니다. 수정하시겠습니까");
                 if(ret == false)
                     return;
@@ -31,19 +31,50 @@
                 return;
             }
             var engWord = document.getElementById("eng").value;
-            
+            if(localStorage.getItem(engWord) == null){
+                alert(engWord + "가 없습니다.");
+                return;
+            }
+            document.getElementById("kor").value = localStorage.getItem(engWord);
+            var korObj = document.getElementById("kor");
+            korObj.value = korWord;
+        }
+
+        function remove(){
+            if(!window.localStorage){
+                alert("지원하지 않습니다.");
+                return;
+            }
+            var engWord = document.getElementById("eng").value;
+            if(engWord == "")
+                return;
+
+            engWord = engWord.trim();
+            if(localStorage.getItem(engWord) == null){
+                alert(engWord + "가 없습니다.");
+                return;
+            }
+            var korWord = localStorage.removeItem(engWord);
+
+            document.getElementById("eng").value = "";
+            document.getElementById("kor").value = engWord + " 삭제됨";
+        }
+        function viewAll(){
+            var win = window.open("prac23_view.html", "viewwin");
         }
     </script>
 </head>
-<body onload="init()">
-    <h3>학점 별로 학생 수를 입력하면 파이 차트로 비율 그리기</h3>
+<body>
+    <h3>나의 단어장 만들기</h3>
     <hr>
-    A <input type="number" id="a" class="num" value="0"> 명
-    B <input type="number" id="b" class="num" value="0"> 명
-    C <input type="number" id="c" class="num" value="0"> 명 <br>
-    D <input type="number" id="d" class="num" value="0"> 명
-    F <input type="number" id="f" class="num" value="0"> 명
-    <input type="button" value="차트그리기" onclick="drawChart()"><br>
-    <canvas id="myCanvas" style="background-color: aliceblue" width="600" height="400"></canvas><br>    
+    <form>
+        <label>영어 <input id="eng" type="text" size="20"></label><br>
+        <label>한글 <input id="kor" type="text" size="20"></label><br>
+        <br>
+        <input type="button" value="단어 저장" onclick="store()">
+        <input type="button" value="영단어 검색" onclick="search()">
+        <input type="button" value="단어 삭제" onclick="remove()">
+        <input type="button" value="전체 보기" onclick="viewAll()">
+    </form>  
 </body>
 </html>
