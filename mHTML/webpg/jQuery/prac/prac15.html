@@ -1,0 +1,63 @@
+<!--prac15.html-->
+<!DOCTYPE html>
+<head>      
+    <title>효과와 애니메이션</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".btn2").hide();
+
+            $(".btn1").on("click", function(e){
+                $(".box").slideUp(1000, "linear", function(){
+                    $(".btn1").hide();
+                    $(".btn2").show();
+                });
+            });
+
+            $(".btn2").on("click", function(){
+                $(".box").fadeIn(1000, "swing", function(){
+                    $(".btn2").hide();
+                    $(".btn1").show();
+                });
+            });
+            $(".btn3").on("click", function(){
+                $(".box").slideToggle(1000, "linear");
+            });
+            $(".btn4").on("click", function(){
+                $(".box").fadeTo("fast", 0.3);
+            });
+            $(".btn5").on("click", function(){
+                $(".box").fadeTo("fast", 1);
+            });
+        });
+    </script>
+    <style>
+        .content{
+            width: 400px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button class="btn1">slideUp</button>
+        <button class="btn2">fadeIn</button>
+    </p>
+    <p>
+        <button class="btn3">toggleSide</button>
+    </p>
+    <p>
+        <button class="btn4">fadeTo(0.3)</button>
+        <button class="btn5">fadeTo(1)</button>
+    </p>
+    <div class="box">
+        <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Maecenas feugiat consectetur nibh, ut luctus urna
+            placerat non. Phasellus consectetur nunc nec mi feugiat
+            egestas. Pellentesque et consectetur mauris, sed rutrum
+            est.
+        </div>
+    </div>
+</body>
+</html>

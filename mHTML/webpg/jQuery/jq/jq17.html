@@ -1,0 +1,23 @@
+<!--jq17.html-->
+<!DOCTYPE html>
+<head>
+    <title>val demo</title>
+    <style>
+        p{
+            color: blue; 
+            margin: 8px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+    <input type="text" value="" />
+    <p></p>
+    <script>
+        $("input").keyup(function(){
+            var value = $(this).val();
+            $("p").text(value);
+        });
+    </script>
+</body>
+</html>

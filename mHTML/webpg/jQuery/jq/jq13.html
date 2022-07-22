@@ -1,0 +1,31 @@
+<!--jq13.html-->
+<!DOCTYPE html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <style>
+        p{
+            background-color: yellow;
+        }
+        .container {
+            height: 80px; width: 200px; border: 1px dotted red;
+        }    
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#button1").click(function(){
+                $(".container").remove();
+            });
+        });
+        $(document).ready(function(){
+            $("#button2").click(function(){
+                $(".container").empty();
+            });
+        });
+    </script>  
+</head>
+<body>    
+    <p>I would like to say: </p>
+    <button id="button1">append()</button>
+    <button id="button2">prepend()</button>
+</body>
+</html>
